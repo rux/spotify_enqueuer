@@ -1,0 +1,92 @@
+* {
+  -webkit-transition: all 0.2s ease;
+}
+
+
+body {
+	background-color:#373737;
+	color:#e2e2e2;
+	font-size:9pt;
+}
+
+table {
+	width:100%;
+}
+
+a, a:visited {
+	color:#c7c7c7;
+	text-decoration: none;
+}
+a:hover {
+	color:#FFF;
+	text-decoration: underline;
+}
+tr:nth-child(even) {
+	background-color:#313131;
+}
+
+th {
+	text-align:left;
+	color:#111;
+	text-shadow: 0px 1px 0px #888;
+	background-color:#999;
+	background-image: linear-gradient(bottom, rgb(134,134,134) 20%, rgb(168,168,168) 80%);
+	background-image: -o-linear-gradient(bottom, rgb(134,134,134) 20%, rgb(168,168,168) 80%);
+	background-image: -moz-linear-gradient(bottom, rgb(134,134,134) 20%, rgb(168,168,168) 80%);
+	background-image: -webkit-linear-gradient(bottom, rgb(134,134,134) 20%, rgb(168,168,168) 80%);
+	background-image: -ms-linear-gradient(bottom, rgb(134,134,134) 20%, rgb(168,168,168) 80%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.2, rgb(134,134,134)),
+		color-stop(0.8, rgb(168,168,168))
+	);
+	border-top:1px solid #c1c1c1;
+	border-bottom:1px solid black;
+	border-left:1px solid #aaa;
+	border-right:1px solid #626262;
+	padding:2px;
+}
+
+.song td {
+	padding:2px;
+	margin-top:2px;
+}
+
+
+.song:hover td {
+	background-color:#272727;
+	color:#fff;
+}
+
+
+.popularity {
+	width:110px;
+}
+.popularity>div{
+	height:0.5em;
+	display:inline-block;
+	border-width:1px;
+	border-style: solid;
+}
+.popularity>div:first-child {
+	border-top-color:    #ccc;
+	border-left-color:   #999;
+	border-bottom-color: #222;
+	border-right-width: 0px;
+	background-color:#81b517;
+}
+.popularity>div:last-child {
+
+	border-top-color:    #ccc;
+	border-right-color:   #666;
+	border-bottom-color: #222;
+	border-left-width: 0px;
+	background-color:#344610;
+}
+
+
+
+

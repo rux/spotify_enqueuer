@@ -1,0 +1,79 @@
+<head>
+  <title>spotify</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <h1>Song Voting</h1>
+  {{greeting}}
+  <div class="leaderboard">
+  	<table>
+      <tr>
+        <th>Track</th><th>Artist</th><th>Album</th><th>Votes</th><th>action</th>
+      </tr>
+    	 {{#each songs}}
+    	  	{{> song}}
+    	 {{/each}}
+    </table>
+
+    <input type="button" id="clear" value="Clear playlist">
+  </div>
+
+<hr/>
+  <form id="addForm">
+    <input type="text" id="q" name="q" value="">
+    <input type="button" id="add" value="Add song" />
+  </form>
+
+  {{#if search_results }}
+  <div class="searchResults">
+    <table>
+      <tr>
+        <th>Track</th><th>Artist</th><th>Album</th><th>Popularity</th>
+      </tr>
+      {{#each search_results }}
+        {{> song}}
+      {{/each}}
+    </table>
+  </div>
+  {{/if}}
+
+
+
+
+</template>
+
+<template name="song">
+	<tr class="song {{# if is_search_result}}enqueue{{/if}}">
+		<td class="name">{{name}}</td>
+		<td class="artists">
+			{{#each track.artists}}
+				{{> artist}}
+			{{/each}}
+		</td>
+    <td>
+      {{track.album.name}}
+    </td>
+
+    {{# if is_search_result}}
+      <td class="popularity"><div style="width:{{ popularity_percent }}px"></div><div style="width:{{ popularity_percent_inverse }}px"></div></td>
+    {{/if}}
+
+    {{#unless is_search_result}}
+		<td class="votes">{{votes}}</td>
+		<td><a href="{{track.href}}">Play</a></td>
+    {{/unless}}
+	</tr>
+</template>
+
+<template name="artist" >
+	{{name}}
+</template>
+
+
+<template name="searchResults">
+
+</template>
