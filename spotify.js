@@ -24,7 +24,11 @@ if (Meteor.is_client) {
   };
 
   Template.hello.songs = function () {
-    return Songs.find({}, {sort: {votes: -1, name: 1}});
+    songs = Songs.find({}, {sort: {votes: -1, name: 1}});
+    if (songs.count() === 0) {
+      return false;
+    }
+    return songs;
   };
 
   Template.hello.search_results = function() {
@@ -65,7 +69,6 @@ if (Meteor.is_client) {
     'click #clear': function()  {
       Songs.remove({});
     }
-
   };
 
 
@@ -93,8 +96,6 @@ if (Meteor.is_client) {
 
 if (Meteor.is_server) {
   Meteor.startup(function () {
-
-
         // code to run on server at startup
   });
 }

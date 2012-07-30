@@ -9,6 +9,8 @@
 <template name="hello">
   <h1>Song Voting</h1>
   {{greeting}}
+
+  {{#if songs}}
   <div class="leaderboard">
   	<table>
       <tr>
@@ -22,7 +24,10 @@
     <input type="button" id="clear" value="Clear playlist">
   </div>
 
-<hr/>
+  <hr/>
+  {{/if}}
+
+
   <form id="addForm">
     <input type="text" id="q" name="q" value="">
     <input type="button" id="add" value="Add song" />
