@@ -5,3 +5,6 @@ This is a small app written in the meteor framework.  It was originally conceive
 It was hacked into existence in about two days
 
 I realise that it may look a lot like Soundrop.  The difference, I guess, is that this is something private that you can run on a local network, whereas Soundrop rooms are public.
+
+TODO - auto play top of the queue
+TODO - move the played tracks to the bottom (or have an option for them to self-delete)
